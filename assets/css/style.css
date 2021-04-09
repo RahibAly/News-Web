@@ -1,0 +1,190 @@
+html,body{
+    background-color: #e7e7e7;
+}
+.article-box .article-image{
+    max-height: 255px;
+}
+
+.ui-menu.ui-autocomplete{
+    z-index: 9999999;
+    max-height: 300px;
+    overflow: auto;
+} 
+
+.article-box .card-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.noNewsMsg, .noCommentsMsg, .articleComments{
+    display: none;
+}
+
+.article-single-box .card-text{
+    text-align: left;
+}
+
+.article-single-box{
+    margin: auto;
+}
+
+main{
+    min-height: 100vh;
+}
+header{
+    min-height: 50px;
+}
+
+
+
+.customRate {
+    float: left;
+    /* height: 46px; */
+    padding: 0 10px;
+    position: relative;
+}
+.customRate:not(:checked) > input {
+    position:absolute;
+    opacity: 0;
+    top: -10;
+}
+.customRate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.customRate:not(:checked) > label:before {
+    content: '★ ';
+}
+.customRate > input:checked ~ label {
+    color: #ffc700;    
+}
+.customRate:not(:checked) > label:hover,
+.customRate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.customRate > input:checked + label:hover,
+.customRate > input:checked + label:hover ~ label,
+.customRate > input:checked ~ label:hover,
+.customRate > input:checked ~ label:hover ~ label,
+.customRate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.created-date{
+    float: right;
+    padding: 10px 0px;
+}
+.customRate .ratingCount{
+    float: right;
+    width: 1em;
+    white-space: nowrap;
+    color: #ccc;
+    padding: 11px 0;
+}
+
+
+/*Comment List styles*/
+.comment-list .row {
+    margin-bottom: 0px;
+  }
+  .comment-list .panel .panel-heading {
+    padding: 4px 15px;
+    position: absolute;
+    border:none;
+    /*Panel-heading border radius*/
+    border-top-right-radius:0px;
+    top: 1px;
+  }
+  .comment-list .panel .panel-heading.right {
+    border-right-width: 0px;
+    /*Panel-heading border radius*/
+    border-top-left-radius:0px;
+    right: 16px;
+  }
+  .comment-list .panel .panel-heading .panel-body {
+    padding-top: 6px;
+  }
+  .comment-list figcaption {
+    /*For wrapping text in thumbnail*/
+    word-wrap: break-word;
+  }
+  /* Portrait tablets and medium desktops */
+  @media (min-width: 768px) {
+    .comment-list .arrow:after, .comment-list .arrow:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+    }
+    .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+      border-left: 0;
+    }
+    /*****Left Arrow*****/
+    /*Outline effect style*/
+    .comment-list .panel.arrow.left:before {
+      left: 0px;
+      top: 30px;
+      /*Use boarder color of panel*/
+      border-right-color: inherit;
+      border-width: 16px;
+    }
+    /*Background color effect*/
+    .comment-list .panel.arrow.left:after {
+      left: 1px;
+      top: 31px;
+      /*Change for different outline color*/
+      border-right-color: #FFFFFF;
+      border-width: 15px;
+    }
+    /*****Right Arrow*****/
+    /*Outline effect style*/
+    .comment-list .panel.arrow.right:before {
+      right: -16px;
+      top: 30px;
+      /*Use boarder color of panel*/
+      border-left-color: inherit;
+      border-width: 16px;
+    }
+    /*Background color effect*/
+    .comment-list .panel.arrow.right:after {
+      right: -14px;
+      top: 31px;
+      /*Change for different outline color*/
+      border-left-color: #FFFFFF;
+      border-width: 15px;
+    }
+  }
+  .comment-list .comment-post {
+    margin-top: 6px;
+  }
+  .commentProfile{
+    width: 50px;
+    height: 50px;
+  }
+
+  .comment-list > .row{
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+  }
+
+  .articleAddComment{
+      display: none;
+  }
+
+  .commentSuccessMsg{
+      display: none;
+  }
+
+  .add-comment .spinner-border{
+      float: right;
+      display: none;
+  }
