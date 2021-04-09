@@ -296,6 +296,7 @@ var app = {
                     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                 }
             });
+            $('.news-container').addClass('filterApplied');
         })
     
         $(document).on('keyup', '#searchfilter-form input', function(e){
@@ -314,6 +315,7 @@ var app = {
                     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
                 }
             });
+            $('.news-container').removeClass('filterApplied');
         });
     },
     resetPageNumber: function(){
@@ -451,7 +453,7 @@ $(document).ready(function(){
         });
         app.initFilter();
         $(window).scroll(function() {
-            if($(window).scrollTop() + $(window).height() >= $('.news-container').height()) {
+            if(!$('.news-container').hasClass('filterApplied') && $(window).scrollTop() + $(window).height() >= $('.news-container').height()) {
                 var lastPage = parseInt($('.news-container').attr('last_loaded_page'));
                 app.newsPageNo = lastPage+1;
                 app.loadNews({
